@@ -10,6 +10,7 @@ const props = defineProps({
 const filteredJobs = computed(() => !props.selectedFilter.size ? props.jobs : props.jobs.filter((job) => Array.from(props.selectedFilter).every((v) => job.selectable.includes(v))));
 // Method
 const isFeaturedNew = (job) => job.new || job.featured ? 'border-l-4 border-l-desaturated-dark-cyan' : '';
+const renderLogo = (imgName) => new URL(`../assets/images/${imgName}`, import.meta.url).href;
 </script>
 
 <template>
@@ -18,7 +19,7 @@ const isFeaturedNew = (job) => job.new || job.featured ? 'border-l-4 border-l-de
       <article class="flex flex-col lg:flex-row justify-between lg:items-center py-6 lg:py-4 px-6 rounded-md shadow-lg bg-white" :class="isFeaturedNew(job)">
         <div class="flex flex-col lg:flex-row lg:items-center">
           <div class="lg:w-20">
-            <img :src='"./src/assets/images/" + job.logo' class="h-10 lg:h-16 w-10 lg:w-16 -mt-10 lg:-mt-0 lg:mr-2" alt="company logo" />
+            <img :src='renderLogo(job.logo)' class="h-10 lg:h-16 w-10 lg:w-16 -mt-10 lg:-mt-0 lg:mr-2" alt="company logo" />
           </div>
           <div class="lg:w-64 border-b lg:border-none border-b-dark-greyish-cyan mb-2">
             <div class="flex flex-row items-center my-3">

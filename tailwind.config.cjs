@@ -10,8 +10,8 @@ module.exports = {
         'league-spartan': ['League Spartan', 'sans-serif']
       },
       backgroundImage: {
-        'mobile-header': 'url("./src/assets/images/bg-header-mobile.svg")',
-        'desktop-header': 'url("./src/assets/images/bg-header-desktop.svg")'
+        'mobile-header': 'url("./assets/images/bg-header-mobile.svg")',
+        'desktop-header': 'url("./assets/images/bg-header-desktop.svg")'
       },
       colors: {
         'light-greyish-cyan': 'hsl(180, 52%, 96%)',

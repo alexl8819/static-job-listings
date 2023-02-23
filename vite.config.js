@@ -6,7 +6,6 @@ export default defineConfig({
   plugins: [vue()],
   publicDir: false,
   build: {
-    outDir: 'public',
-    assetsDir: ''
+    outDir: 'public'
   }
 })

@@ -10,6 +10,7 @@ This is a solution to the [Job listings with filtering challenge on Frontend Men
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -29,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Static Job Listings](https://slightlyfunctional.gitlab.io/static-job-listings/)
 
 ## My process
 
@@ -42,10 +43,9 @@ Users should be able to:
 - [TailwindCSS](https://tailwindcss.com/) - CSS framework
 - [Vite](https://vitejs.dev/) - Bundler
 
-### Useful resources
+## Continued development
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+This is the first project using Vite. I decided to switch it up and play with Vue 3 since I hadn't used the framework since Vue 2 several years ago. It doesn't seem too difficult to use, however I find its only really meant to be used for large projects (fullstack) as it feels a bit overkill. Parcel seems to be the perfect mix in terms of simplicity (the no configuration is a huge selling point, IMO) for SPA development. I look forward to trying out esbuild when its matured and ready for use on web apps. For the app, I decided to use a reactive wrapper around a Set instead of a regular array to hold the "filter" values because the data structure naturally limits duplicate values (i.e no need to check if a value already exists before appending). The only problem I came across was that I found that a v-model could be used for watching child component changes however the documentation didn't seem to demonstrate it being capable for more than primitive types (i.e string), therefore I decided to emit events to detect changes and implement them in the parent component which seemed aligned to the Vue way of doing things but didn't seem elegant to me. If you know how to properly implement this, feel free to comment on the frontend mentor page or open a issue.
 
 ## Author
 

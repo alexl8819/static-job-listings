@@ -30,12 +30,10 @@
               </div>
             </div>
             <p class="font-bold cursor-pointer text-very-dark-greyish-cyan hover:text-desaturated-dark-cyan">{{ job.position }}</p>
-            <ul class="list-none mt-1 mb-4 space-x-3.5 flex flex-row items-center"> <!--list-dict -->
-              <li class="text-xs text-dark-greyish-cyan">{{ job.postedAt }}</li> <!-- first:list-none -->
-              <li class="text-xs text-dark-greyish-cyan">•</li>
-              <li class="text-xs text-dark-greyish-cyan">{{ job.contract }}</li>
-              <li class="text-xs text-dark-greyish-cyan">•</li>
-              <li class="text-xs text-dark-greyish-cyan">{{ job.location }}</li>
+            <ul class="list-disc mt-1 mb-4 flex flex-row items-center">
+              <li class="text-xs first:list-none mr-6 text-dark-greyish-cyan">{{ job.postedAt }}</li>
+              <li class="text-xs mr-6 pl-2 text-dark-greyish-cyan">{{ job.contract }}</li>
+              <li class="text-xs pl-2 text-dark-greyish-cyan">{{ job.location }}</li>
             </ul>
           </div>
         </div>

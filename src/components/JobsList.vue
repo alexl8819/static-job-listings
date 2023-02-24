@@ -14,7 +14,7 @@
 </script>
 
 <template>
-  <div class="space-y-6 my-4 lg:my-6">
+  <div class="space-y-6 my-4">
     <template v-for="job in filteredJobs" :key="job.id">
       <article class="flex flex-col lg:flex-row justify-between lg:items-center my-4 py-4 lg:py-2 px-6 rounded-md shadow-lg bg-white" :class="isFeaturedNew(job)">
         <div class="flex flex-col lg:flex-row lg:items-center lg:w-[37rem]">

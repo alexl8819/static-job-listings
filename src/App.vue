@@ -20,7 +20,7 @@
 
 <template>
   <header class="h-32 bg-desaturated-dark-cyan bg-mobile-header lg:bg-desktop-header"></header>
-  <div class="flex flex-col items-center h-auto -mt-10 mb-8 lg:mb-0">
+  <div class="flex flex-col items-center h-auto -mt-10 mb-8">
     <FilterBoard :selectedFilter="selectedFilter" @remove-filter="removeFromFilter" @remove-all="removeAll" />
   </div>
   <div class="flex flex-col justify-start items-center min-h-screen">

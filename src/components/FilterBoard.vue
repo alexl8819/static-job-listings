@@ -6,12 +6,11 @@
   });
   defineEmits(['removeFilter', 'removeAll']);
   // Computed
-  const isHidden = computed(() => !props.selectedFilter.size ? 'hidden' : 'block');
   const currentFilters = computed(() => Array.from(props.selectedFilter));
 </script>
 
 <template>
-  <div class="flex justify-between items-center w-80 lg:w-[64rem] py-6 lg:py-4 px-4 bg-white rounded-lg shadow-lg" :class="isHidden">
+  <div class="flex justify-between items-center w-80 lg:w-[59rem] py-6 lg:py-4 px-4 bg-white rounded-lg shadow-lg">
     <div>
       <template v-for="filter in currentFilters">
         <div class="inline-block mr-2 mb-2 lg:mb-0 cursor-pointer">

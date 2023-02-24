@@ -14,10 +14,10 @@
 </script>
 
 <template>
-  <div class="space-y-6 my-6">
+  <div class="space-y-6 my-6 lg:my-16">
     <template v-for="job in filteredJobs" :key="job.id">
       <article class="flex flex-col lg:flex-row justify-between lg:items-center my-4 py-4 lg:py-2 px-6 rounded-md shadow-lg bg-white" :class="isFeaturedNew(job)">
-        <div class="flex flex-col lg:flex-row lg:items-center lg:w-[37rem]">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:w-[32rem]">
           <div class="lg:w-20">
             <img :src='renderLogo(job.logo)' class="h-10 lg:h-16 w-10 lg:w-16 -mt-10 lg:-mt-0" alt="company logo" />
           </div>

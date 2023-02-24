@@ -1,13 +1,13 @@
 <script setup>
-import { computed } from 'vue';
+  import { computed } from 'vue';
 
-const props = defineProps({
-  selectedFilter: Set,
-});
-
-// Computed
-const isHidden = computed(() => !props.selectedFilter.size ? 'hidden' : 'block');
-const currentFilters = computed(() => Array.from(props.selectedFilter));
+  const props = defineProps({
+    selectedFilter: Set,
+  });
+  defineEmits(['removeFilter', 'removeAll']);
+  // Computed
+  const isHidden = computed(() => !props.selectedFilter.size ? 'hidden' : 'block');
+  const currentFilters = computed(() => Array.from(props.selectedFilter));
 </script>
 
 <template>

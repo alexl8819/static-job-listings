@@ -1,20 +1,20 @@
 <script setup>
-import { computed } from 'vue';
+  import { computed } from 'vue';
 
-const props = defineProps({
-  jobs: Array,
-  selectedFilter: Set
-});
-
-// Computed
-const filteredJobs = computed(() => !props.selectedFilter.size ? props.jobs : props.jobs.filter((job) => Array.from(props.selectedFilter).every((v) => job.selectable.includes(v))));
-// Methods
-const isFeaturedNew = (job) => job.new && job.featured ? 'border-l-4 border-l-desaturated-dark-cyan' : '';
-const renderLogo = (imgName) => new URL(`../assets/images/${imgName}`, import.meta.url).href;
+  const props = defineProps({
+    jobs: Array,
+    selectedFilter: Set
+  });
+  defineEmits(['addFilter']);
+  // Computed
+  const filteredJobs = computed(() => !props.selectedFilter.size ? props.jobs : props.jobs.filter((job) => Array.from(props.selectedFilter).every((v) => job.selectable.includes(v))));
+  // Methods
+  const isFeaturedNew = (job) => job.new && job.featured ? 'border-l-4 border-l-desaturated-dark-cyan' : '';
+  const renderLogo = (imgName) => new URL(`../assets/images/${imgName}`, import.meta.url).href;
 </script>
 
 <template>
-  <div class="space-y-6 my-2">
+  <div class="space-y-6 my-4 lg:my-6">
     <template v-for="job in filteredJobs" :key="job.id">
       <article class="flex flex-col lg:flex-row justify-between lg:items-center my-4 py-4 lg:py-2 px-6 rounded-md shadow-lg bg-white" :class="isFeaturedNew(job)">
         <div class="flex flex-col lg:flex-row lg:items-center lg:w-[37rem]">

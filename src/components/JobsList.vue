@@ -38,7 +38,7 @@
           </div>
         </div>
         <div class="mt-6 lg:mt-0 lg:h-12 lg:py-2">
-          <button class="inline-block mr-2 mb-6 py-2 px-4 rounded-lg bg-light-greyish-cyan-2 hover:bg-desaturated-dark-cyan text-desaturated-dark-cyan hover:text-white lg:text-xs cursor-pointer" @click="$emit('addFilter', tablet)" v-for="tablet in job.selectable">
+          <button type="button" class="inline-block mr-2 mb-6 py-2 px-4 rounded-lg bg-light-greyish-cyan-2 hover:bg-desaturated-dark-cyan text-desaturated-dark-cyan hover:text-white lg:text-xs cursor-pointer" @click="$emit('addFilter', tablet)" v-for="tablet in job.selectable">
             {{ tablet }}
           </button>
         </div>

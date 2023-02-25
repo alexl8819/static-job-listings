@@ -14,16 +14,17 @@
   })));
   const isFilterVisible = computed(() => selectedFilter.value.size > 0 ? 'block' : 'hidden');
   // Methods
-  const mutateUrl = () => window.history.pushState(null, '', window.location.origin + (selectedFilter.value.size > 0 ? '#?filters=' + Array.from(selectedFilter.value).join(',') : '#'))
+  const mutateUrl = () => window.history.pushState(null, '', window.location.origin + window.location.pathname + (selectedFilter.value.size > 0 ? '#?filters=' + Array.from(selectedFilter.value).join(',') : '#'))
   const isValidFilter = (filter) => new Set(availableJobs.value.reduce((acc, job) => acc.concat(job.selectable), [])).has(filter);
   const addToFilter = (filter) => isValidFilter(filter) ? selectedFilter.value.add(filter) && mutateUrl() : false;
   const removeFromFilter = (filter) => selectedFilter.value.delete(filter) && mutateUrl();
   const removeAll = () => selectedFilter.value.forEach((filter) => removeFromFilter(filter)) && mutateUrl();
   // Add filters used through URL query
-  const includedFilters = window.location.hash.split('=');
+  const includedFilters = window.location.href.split('=');
   if (includedFilters.length > 1) {
     includedFilters[1].split(',').forEach((filter) => addToFilter(filter));
   }
+  console.log(window.location)
 </script>
 
 <template>

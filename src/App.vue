@@ -24,7 +24,6 @@
   if (includedFilters.length > 1) {
     includedFilters[1].split(',').forEach((filter) => addToFilter(filter));
   }
-  console.log(window.location)
 </script>
 
 <template>

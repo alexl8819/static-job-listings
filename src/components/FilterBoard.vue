@@ -10,7 +10,7 @@
 </script>
 
 <template>
-  <div class="flex justify-between items-center w-80 lg:w-[59rem] py-4 lg:py-4 px-4 bg-white rounded-lg shadow-lg">
+  <div class="flex justify-between items-center w-80 lg:w-[60rem] py-4 lg:py-4 px-4 bg-white rounded-lg shadow-lg">
     <div class="cursor-pointer py-2">
       <template v-for="filter in currentFilters" :key="filter">
         <button class="inline-block mr-2 mb-2 lg:mb-0" @click.prevent="$emit('removeFilter', filter)">

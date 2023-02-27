@@ -32,7 +32,7 @@
     <FilterBoard :selectedFilter="selectedFilter" @remove-filter="removeFromFilter" @remove-all="removeAll" />
   </div>
   <div class="flex flex-col justify-start items-center min-h-screen">
-    <div class="max-w-xs lg:max-w-7xl">
+    <div class="w-full max-w-xs lg:max-w-5xl">
       <JobsList :jobs="availableJobs" :selectedFilter="selectedFilter" @add-filter="addToFilter" />
     </div>
   </div>

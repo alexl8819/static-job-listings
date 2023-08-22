@@ -28,10 +28,10 @@
 
 <template>
   <header class="h-36 bg-desaturated-dark-cyan bg-mobile-header lg:bg-desktop-header"></header>
-  <div class="flex flex-col items-center h-auto -mt-10 mb-8 lg:-mb-8" :class="isFilterVisible">
+  <div class="-mt-10 mb-8 flex h-auto flex-col items-center lg:-mb-8" :class="isFilterVisible">
     <FilterBoard :selectedFilter="selectedFilter" @remove-filter="removeFromFilter" @remove-all="removeAll" />
   </div>
-  <div class="flex flex-col justify-start items-center min-h-screen">
+  <div class="flex min-h-screen flex-col items-center justify-start">
     <div class="w-full max-w-xs lg:max-w-5xl">
       <JobsList :jobs="availableJobs" :selectedFilter="selectedFilter" @add-filter="addToFilter" />
     </div>

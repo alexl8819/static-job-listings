@@ -10,19 +10,19 @@
 </script>
 
 <template>
-  <div class="flex justify-between items-center w-80 lg:w-[64rem] py-4 lg:py-4 px-4 bg-white rounded-lg shadow-lg">
+  <div class="flex w-80 items-center justify-between rounded-lg bg-white p-4 shadow-lg lg:w-[64rem] lg:py-4">
     <div class="cursor-pointer py-2">
       <template v-for="filter in currentFilters" :key="filter">
-        <button class="inline-block mr-2 mb-2 lg:mb-0" @click.prevent="$emit('removeFilter', filter)">
-          <div class="flex flex-row justify-center items-center">
-            <span class="ml-2 px-2.5 py-1 bg-light-greyish-cyan-2 text-desaturated-dark-cyan rounded-l-md">{{ filter }}</span>
-            <div type="button" class="bg-desaturated-dark-cyan hover:bg-black p-2 rounded-r-md">
-              <img src="../assets/images/icon-remove.svg" class="w-3.5 h-3.5" alt="remove" />
+        <button class="mb-2 mr-2 inline-block lg:mb-0" @click.prevent="$emit('removeFilter', filter)">
+          <div class="flex flex-row items-center justify-center">
+            <span class="ml-2 rounded-l-md bg-light-greyish-cyan-2 px-2.5 py-1 text-desaturated-dark-cyan">{{ filter }}</span>
+            <div type="button" class="rounded-r-md bg-desaturated-dark-cyan p-2 hover:bg-black">
+              <img src="../assets/images/icon-remove.svg" class="h-3.5 w-3.5" alt="remove" />
             </div>
           </div>
         </button>
       </template>
     </div>
-    <button type="button" class="text-dark-greyish-cyan hover:text-desaturated-dark-cyan hover:underline hover:underline-offset-2" @click.prevent="$emit('removeAll')">Clear</button>
+    <button id="clear-all" type="button" class="text-dark-greyish-cyan hover:text-desaturated-dark-cyan hover:underline hover:underline-offset-2" @click.prevent="$emit('removeAll')">Clear</button>
   </div>
 </template>

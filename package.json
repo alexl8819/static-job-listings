@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/static-job-listings/",
+    "build": "vite build --base=/static-job-listings/ && cp -R src/assets/images/*.svg public/assets",
     "preview": "vite preview",
     "lint": "npx eslint src/**/**.{js,vue} --max-warnings=0",
     "test": "jest --no-cache"

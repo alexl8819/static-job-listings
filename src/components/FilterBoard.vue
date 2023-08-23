@@ -1,6 +1,7 @@
 <script setup>
   import { computed } from 'vue';
 
+  import removeImageIcon from '../assets/images/icon-remove.svg?url';
   const props = defineProps({
     selectedFilter: Set,
   });
@@ -17,7 +18,7 @@
           <div class="flex flex-row items-center justify-center">
             <span class="ml-2 rounded-l-md bg-light-greyish-cyan-2 px-2.5 py-1 text-desaturated-dark-cyan">{{ filter }}</span>
             <div type="button" class="rounded-r-md bg-desaturated-dark-cyan p-2 hover:bg-black">
-              <img src="../assets/images/icon-remove.svg" class="h-3.5 w-3.5" alt="remove" />
+              <img :src="removeImageIcon" class="h-3.5 w-3.5" alt="remove icon" />
             </div>
           </div>
         </button>

@@ -18,4 +18,15 @@ describe('JobsList.vue', () => {
     });
     expect(wrapper.get('article > div > div > p').text()).toEqual('Senior Frontend Developer');
   });
+
+  test('should emit addFilter event to parent when a tablet is clicked to add a new filter', async () => {
+    const wrapper = shallowMount(JobsList, {
+      props: { 
+        jobs: availableJobs, 
+        selectedFilter: new Set(['CSS']) 
+      }
+    });
+    await wrapper.findAll('button')[1].trigger('click');
+    expect(wrapper.emitted()).toHaveProperty('addFilter');
+  });
 });

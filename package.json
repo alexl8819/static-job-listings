@@ -50,6 +50,9 @@
       "json",
       "vue"
     ],
+    "moduleNameMapper": {
+      ".+\\.(svg)(\\?component)?$": "<rootDir>/src/__mocks__/MockSVG.vue"
+    },
     "transform": {
       "^.+\\.js$": "babel-jest",
       "^.+\\.vue$": "@vue/vue3-jest",

@@ -24,7 +24,7 @@
 </script>
 
 <template>
-  <div class="-mt-10 flex h-16 w-16 items-center lg:mt-0 lg:h-auto lg:w-auto">
+  <div class="-mt-10 flex h-16 w-16 items-center lg:mt-0 lg:h-auto lg:w-auto" data-test="logo-container">
     <Logo :width="computedWidth" :height="computedHeight" viewBox="0 0 100 100" />
   </div>
 </template>

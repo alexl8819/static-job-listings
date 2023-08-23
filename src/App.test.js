@@ -7,11 +7,11 @@ describe('App.vue', () => {
     const wrapper = mount(App, {
       data() { 
         return { 
-          selectedFilter: new Set(['HTML']) 
+          selectedFilter: new Set(['HTML', 'Javascript']) 
         }
       }
     });
     await wrapper.find('#clear-all').trigger('click');
-    expect(wrapper.props('selectedFilter').size).toBe(0);
+    expect(wrapper.vm.$data.selectedFilter.size).toBe(0);
   });*/
 });

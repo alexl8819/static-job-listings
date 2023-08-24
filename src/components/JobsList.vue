@@ -11,6 +11,7 @@
   const filteredJobs = computed(() => !props.selectedFilter.size ? props.jobs : props.jobs.filter((job) => Array.from(props.selectedFilter).every((v) => job.selectable.includes(v))));
   // Methods
   const isFeaturedNew = (job) => job.new && job.featured ? 'border-l-4 border-l-desaturated-dark-cyan' : '';
+  const isActive = (tablet) => props.selectedFilter.has(tablet);
   const createLogo = (logo) => new URL(`../assets/images/${logo}`, import.meta.url).href;
 </script>
 
@@ -40,7 +41,10 @@
         </div>
         <div class="mt-3 lg:mt-0 lg:h-12 lg:py-2">
           <template v-for="tablet in job.selectable" :key="tablet">
-            <button type="button" class="mb-6 mr-2 inline-block cursor-pointer rounded-lg bg-light-greyish-cyan-2 px-2.5 lg:px-4 py-1 lg:py-2 text-desaturated-dark-cyan hover:bg-desaturated-dark-cyan hover:text-white lg:text-xs font-bold" @click.prevent="$emit('addFilter', tablet)">
+            <button type="button" class="mb-6 mr-2 inline-block cursor-not-allowed rounded-lg bg-desaturated-dark-cyan px-2.5 lg:px-4 py-1 lg:py-2 text-white lg:text-xs font-bold" v-if="isActive(tablet)">
+            {{ tablet }}
+            </button>
+            <button type="button" class="mb-6 mr-2 inline-block cursor-pointer rounded-lg bg-light-greyish-cyan-2 px-2.5 lg:px-4 py-1 lg:py-2 text-desaturated-dark-cyan hover:bg-desaturated-dark-cyan hover:text-white lg:text-xs font-bold" @click.prevent="$emit('addFilter', tablet)" v-else>
             {{ tablet }}
             </button>
           </template>

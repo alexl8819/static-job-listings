@@ -24,6 +24,7 @@
     "@vue/vue3-jest": "^29.2.5",
     "autoprefixer": "^10.4.13",
     "babel-jest": "^29.6.2",
+    "babel-plugin-transform-import-meta": "^2.2.1",
     "eslint": "^8.47.0",
     "eslint-plugin-jest": "^27.2.3",
     "eslint-plugin-tailwindcss": "^3.13.0",
@@ -34,7 +35,6 @@
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7",
     "vite": "^4.1.0",
-    "vite-svg-loader": "^4.0.0",
     "vue-eslint-parser": "^9.3.1"
   },
   "jest": {
@@ -50,9 +50,6 @@
       "json",
       "vue"
     ],
-    "moduleNameMapper": {
-      ".+\\.(svg)(\\?component)?$": "<rootDir>/src/__mocks__/MockSVG.vue"
-    },
     "transform": {
       "^.+\\.js$": "babel-jest",
       "^.+\\.vue$": "@vue/vue3-jest",

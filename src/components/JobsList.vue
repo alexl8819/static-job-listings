@@ -1,8 +1,7 @@
 <script setup>
   import { computed } from 'vue';
   
-  import DynamicLogo from './DynamicLogo.vue';
-
+  // import DynamicLogo from './DynamicLogo.vue';
   const props = defineProps({
     jobs: Array,
     selectedFilter: Set
@@ -12,6 +11,7 @@
   const filteredJobs = computed(() => !props.selectedFilter.size ? props.jobs : props.jobs.filter((job) => Array.from(props.selectedFilter).every((v) => job.selectable.includes(v))));
   // Methods
   const isFeaturedNew = (job) => job.new && job.featured ? 'border-l-4 border-l-desaturated-dark-cyan' : '';
+  const createLogo = (logo) => new URL(`../assets/images/${logo}`, import.meta.url).href;
 </script>
 
 <template>
@@ -19,8 +19,8 @@
     <template v-for="job in filteredJobs" :key="job.id">
       <article class="my-4 flex flex-col justify-between rounded-md bg-white px-6 py-4 shadow-lg lg:flex-row lg:items-center lg:py-2" :class="isFeaturedNew(job)">
         <div class="flex flex-col lg:w-[32rem] lg:flex-row lg:items-center">
-          <div class="lg:h-20 lg:w-24">
-            <DynamicLogo :name="job.logo" />
+          <div class="w-12 lg:w-20">
+            <img :src="createLogo(job.logo)" class="-mt-10 h-10 w-10 items-center lg:-mt-0 lg:h-16 lg:w-16" alt="company logo" />
           </div>
           <div class="mb-2 border-b border-b-dark-greyish-cyan lg:mb-0 lg:border-none">
             <div class="my-3 flex flex-row items-center lg:my-1">

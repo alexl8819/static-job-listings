@@ -14,7 +14,7 @@
   const computedHeight = computed(() => isMobile.value ? 60 : 80);
   const computedWidth = computed(() => isMobile.value ? 60 : 80);
   // Methods
-  const Logo = defineAsyncComponent(() => import(/* @vite-ignore */`../assets/images/${props.name}?component`));
+  const Logo = defineAsyncComponent(() => import(/* @vite-ignore */`../assets/images/${props.name}`));
   const resizeHandler = () => {
     isMobile.value = window.innerWidth <= 767;
   };

@@ -1,7 +1,7 @@
 <script setup>
   import { computed } from 'vue';
 
-  import removeImageIcon from '../assets/images/icon-remove.svg?url';
+  import removeImageIcon from '../assets/images/icon-remove.svg';
   const props = defineProps({
     selectedFilter: Set,
   });

@@ -19,12 +19,12 @@
     <template v-for="job in filteredJobs" :key="job.id">
       <article class="my-4 flex flex-col justify-between rounded-md bg-white px-6 py-4 shadow-lg lg:flex-row lg:items-center lg:py-2" :class="isFeaturedNew(job)">
         <div class="flex flex-col lg:w-[32rem] lg:flex-row lg:items-center">
-          <div class="w-12 lg:w-20">
-            <img :src="createLogo(job.logo)" class="-mt-10 h-10 w-10 items-center lg:-mt-0 lg:h-16 lg:w-16" alt="company logo" />
+          <div class="w-16 lg:w-20">
+            <img :src="createLogo(job.logo)" class="-mt-8 h-12 w-12 items-center lg:-mt-0 lg:h-16 lg:w-16" alt="company logo" />
           </div>
           <div class="mb-2 border-b border-b-dark-greyish-cyan lg:mb-0 lg:border-none">
             <div class="my-3 flex flex-row items-center lg:my-1">
-              <h1 class="text-sm text-desaturated-dark-cyan">{{ job.company }}</h1>
+              <h1 class="text-base font-bold text-desaturated-dark-cyan">{{ job.company }}</h1>
               <div class="ml-6 flex flex-row space-x-2.5 lg:ml-4">
                 <span class="rounded-full bg-desaturated-dark-cyan px-2 py-1 text-xs uppercase text-white" v-if="job.new">new!</span>
                 <span class="rounded-full bg-black px-2 py-1 text-xs uppercase text-white" v-if="job.featured">featured</span>

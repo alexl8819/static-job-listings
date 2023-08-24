@@ -3,15 +3,14 @@ import { mount } from '@vue/test-utils';
 import App from './App.vue';
 
 describe('App.vue', () => {
-  /*test('Should clear all filters', async () => {
+  test('Should not display the filter board when there are no filters applied', async () => {
     const wrapper = mount(App, {
       data() { 
         return { 
-          selectedFilter: new Set(['HTML', 'Javascript']) 
+          selectedFilter: new Set([]) 
         }
       }
     });
-    await wrapper.find('#clear-all').trigger('click');
-    expect(wrapper.vm.$data.selectedFilter.size).toBe(0);
-  });*/
+    expect(wrapper.find('div.hidden').exists()).toBe(true);
+  });
 });

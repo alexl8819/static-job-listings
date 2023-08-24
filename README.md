@@ -25,7 +25,8 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot](./screenshots/desktop.png)
+![Mobile Screenshot](./screenshots/mobile.png)
+![Desktop Screenshot](./screenshots/desktop.png)
 
 ### Links
 
@@ -41,6 +42,7 @@ Users should be able to:
 - [Vue](https://vuejs.org/) - JS framework
 - [TailwindCSS](https://tailwindcss.com/) - CSS framework
 - [Vite](https://vitejs.dev/) - Bundler
+- Jest
 
 ## Continued development
 
